@@ -3,12 +3,11 @@
  * Author: che
  ****************************************************************************** */
 
-import ContextRedisStore from "./index.js";
+import ContextRedisStore, { REDIS_DISCONNECTED_FLAG } from "./index.js";
 import { expect } from 'chai';
 
 let context;
 
-const DISCONNECTED_FLAG = "REDIS_DISCONNECTED";
 
 function waitUntilReady(context) {
   return new Promise((resolve, reject) => {
@@ -158,7 +157,7 @@ describe('ContextRedisStore', () => {
 
     it('Should return null on get', async () => {
       const value = await context.get('context', 'key');
-      expect(value).to.be.equal(DISCONNECTED_FLAG);
+      expect(value).to.be.equal(REDIS_DISCONNECTED_FLAG);
     });
 
     it('Should not throw on set', async () => {
@@ -187,7 +186,7 @@ describe('ContextRedisStore', () => {
       expect(keys).to.deep.equal([]);
 
       const value = await context.get('x', 'y');
-      expect(value).to.equal(DISCONNECTED_FLAG);
+      expect(value).to.equal(REDIS_DISCONNECTED_FLAG);
     });
   });
 });
