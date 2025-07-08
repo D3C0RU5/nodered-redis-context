@@ -6,8 +6,10 @@
   "type": "module",
   "exports": "./index.js",
   "scripts": {
+    "setup:up": "docker compose -f __tests__/docker-compose.yaml up -d",
+    "setup:down": "docker compose -f __tests__/docker-compose.yaml down",
     "build": "docker compose -f __tests__/docker-compose.yaml up -d",
-    "test": "npm run build && NODE_ENV=test mocha --timeout 10000 --exit --trace-warnings \"**/*.@(test).js\""
+    "test": "npm run setup:up && NODE_ENV=test mocha --timeout 10000 --exit --trace-warnings \"**/*.@(test).js\" && npm run setup:down"
   },
   "keywords": [
     "nodered",
