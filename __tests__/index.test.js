@@ -2,9 +2,8 @@
  * Developed by Fundação CERTI - 2025
  * Author: che
  ****************************************************************************** */
-
-import ContextRedisStore, { REDIS_DISCONNECTED_FLAG } from "./index.js";
-import { expect } from 'chai';
+const { expect } = require("chai");
+const { ContextRedisStore, REDIS_DISCONNECTED_FLAG } = require("../index.js");
 
 let context;
 

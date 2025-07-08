@@ -1,4 +1,4 @@
-const log = {
+module.exports = {
   _shouldLog() {
     return process.env.NODE_ENV !== 'test';
   },
@@ -32,4 +32,3 @@ const log = {
   }
 };
 
-export default log;

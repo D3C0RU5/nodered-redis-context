@@ -3,10 +3,10 @@
  * Author: che
  ****************************************************************************** */
 
-import redis from "redis";
-import log from "./utils/log.js";
+const redis = require("redis");
+const log = require("./utils/log");
 
-export const REDIS_DISCONNECTED_FLAG = "REDIS_DISCONNECTED";
+const REDIS_DISCONNECTED_FLAG = "REDIS_DISCONNECTED";
 
 function ContextRedisStore(config) {
   this.config = config;
@@ -178,6 +178,9 @@ ContextRedisStore.prototype.clean = function (activeNodes) {
 };
 
 
-export default function (config) {
-  return new ContextRedisStore(config);
+module.exports = {
+  ContextRedisStore: function (config) {
+    return new ContextRedisStore(config);
+  },
+  REDIS_DISCONNECTED_FLAG
 };
