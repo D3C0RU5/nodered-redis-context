@@ -177,10 +177,7 @@ ContextRedisStore.prototype.clean = function (activeNodes) {
   });
 };
 
-
-module.exports = {
-  ContextRedisStore: function (config) {
-    return new ContextRedisStore(config);
-  },
-  REDIS_DISCONNECTED_FLAG
+module.exports = function (config) {
+  return new ContextRedisStore(config);
 };
+module.exports.REDIS_DISCONNECTED_FLAG = REDIS_DISCONNECTED_FLAG;

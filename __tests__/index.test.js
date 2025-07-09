@@ -3,7 +3,8 @@
  * Author: che
  ****************************************************************************** */
 const { expect } = require("chai");
-const { ContextRedisStore, REDIS_DISCONNECTED_FLAG } = require("../index.js");
+const ContextRedisStore = require("../index.js");
+const { REDIS_DISCONNECTED_FLAG } = require("../index.js");
 
 let context;
 
