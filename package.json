@@ -1,6 +1,6 @@
 {
   "name": "@d3c0ru5/nodered-redis-context",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "A Node-RED context plugin using Redis as a backend store.",
   "main": "index.js",
   "exports": "./index.js",

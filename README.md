@@ -24,7 +24,7 @@ contextStorage: {
     module: "memory"
   },
   redis: {
-    module: "@d3c0ru5/nodered-redis-context",
+    module: require("@d3c0ru5/nodered-redis-context"),
     config: {
       host: "127.0.0.1",
       port: 6379,
